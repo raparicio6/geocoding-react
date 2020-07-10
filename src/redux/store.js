@@ -19,8 +19,5 @@ const store = rootReducer => {
 
 export default () => {
   const appReducer = combineReducers({});
-
-  const rootReducer = (state, action) => appReducer(state, action);
-
-  return store(rootReducer);
+  return store(appReducer);
 };
