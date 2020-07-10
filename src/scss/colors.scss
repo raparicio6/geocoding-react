@@ -1,0 +1,18 @@
+/* stylelint-disable plugin/stylelint-no-indistinguishable-colors */
+$black: #000;
+$burnt-sienna: #ED7261;
+$cerulean: #00ADEE;
+$deep-blush: #ED7299;
+$fruit-salad: #4CAF50;
+$fun-blue: #2059B6;
+$gray: #808080;
+$lighten-darken: rgba(0, 0, 0, 0.5);
+$solitude: #F4F4F8;
+$valencia: #D53030;
+$very-light-grey: #CCC;
+$wild-sand: #F4F4F4;
+$white: #FFF;
+
+.background-wild-sand {
+  background-color: $wild-sand;
+}
