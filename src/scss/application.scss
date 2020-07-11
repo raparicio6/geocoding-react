@@ -10,6 +10,11 @@
 
 @import 'variables';
 
+@font-face {
+  font-family: Texta-Medium;
+  src: url('../fonts/Texta-Medium.otf') format('opentype');
+}
+
 body {
   margin: 0;
   padding: 0;

@@ -1,0 +1,21 @@
+@import '../../../scss/colors';
+
+.background {
+  background-color: $wild-sand;
+  background-image: url('world-map.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  margin: auto;
+}
+
+.title {
+  color: $emperor;
+  font-family: Texta-Medium;
+  font-size: 40px;
+  font-weight: 600;
+}

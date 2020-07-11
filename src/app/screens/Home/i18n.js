@@ -1,3 +1,5 @@
 import i18next from 'i18next';
 
-i18next.addResources('en', 'Home', {});
+i18next.addResources('en', 'Home', {
+  title: 'Find distances around the world'
+});

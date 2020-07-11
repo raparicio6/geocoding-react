@@ -1,0 +1,15 @@
+@import '../../../scss/colors';
+
+.appbar {
+  background-color: $governor-bay;
+  height: 75px;
+  padding: 0 50px;
+}
+
+.logo {
+  height: 21px;
+}
+
+.toolbar {
+  padding: 0 !important; // stylelint-disable declaration-no-important
+}
