@@ -1,7 +1,7 @@
 @import '../../../scss/colors';
 
 .appbar {
-  background-color: $governor-bay;
+  background-color: $governor-bay !important; // stylelint-disable-line declaration-no-important
   height: 75px;
   padding: 0 50px;
 }
@@ -11,5 +11,5 @@
 }
 
 .toolbar {
-  padding: 0 !important; // stylelint-disable declaration-no-important
+  padding: 0 !important; // stylelint-disable-line declaration-no-important
 }

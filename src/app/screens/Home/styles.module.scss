@@ -2,20 +2,26 @@
 
 .background {
   background-color: $wild-sand;
-  background-image: url('world-map.png');
+  background-image: url('world-map.svg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: contain;
   min-height: 100vh;
+  padding-top: 250px;
 }
 
 .container {
-  margin: auto;
+  align-self: center;
+  backdrop-filter: blur(4px);
+  max-width: 1200px;
+  padding: 100px;
+  width: 100%;
 }
 
 .title {
-  color: $emperor;
+  align-self: center;
+  color: $royal-blue;
   font-family: Texta-Medium;
-  font-size: 40px;
-  font-weight: 600;
+  font-size: 60px;
+  font-weight: 700;
 }
