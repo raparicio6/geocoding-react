@@ -1,6 +1,7 @@
 export const Routes = {
   HOME: '/',
-  ADDRESSES: '/addresses'
+  ADDRESSES: '/addresses',
+  MAP: '/map'
 };
 
 export const LANGUAGES = {

@@ -33,6 +33,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     'no-nested-ternary': 'off',
     'id-length': ['error', { max: 35 , min: 1 }],
-    'generator-star-spacing': 'off'
+    'generator-star-spacing': 'off',
+    'react/forbid-dom-props': 'off'
   }
 };

@@ -1,24 +1,33 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { elementType } from 'prop-types';
+import { elementType, bool } from 'prop-types';
 
 import Background from '../../Background';
 
-function AppRoute({ component: Component, ...props }) {
+function AppRoute({ component: Component, withBackground, ...props }) {
   return (
     <Route
       {...props}
-      render={routeProps => (
-        <Background>
+      render={routeProps =>
+        withBackground ? (
+          <Background>
+            <Component {...routeProps} />
+          </Background>
+        ) : (
           <Component {...routeProps} />
-        </Background>
-      )}
+        )
+      }
     />
   );
 }
 
 AppRoute.propTypes = {
-  component: elementType.isRequired
+  component: elementType.isRequired,
+  withBackground: bool
+};
+
+AppRoute.defaultProps = {
+  withBackground: true
 };
 
 export default AppRoute;

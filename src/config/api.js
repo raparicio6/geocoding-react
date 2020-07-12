@@ -1,6 +1,6 @@
 import { create } from 'apisauce';
 
-const baseURL = process.env.GEOCODING_API_BASE_URL;
+const baseURL = process.env.REACT_APP_GEOCODING_API_BASE_URL;
 
 const api = create({
   baseURL,
