@@ -27,12 +27,13 @@ const addLocations = (map, maps, locations) => {
 };
 
 function Map({ locations }) {
-  const handleOnGoogleApiLoaded = useCallback(({ map, maps }) => addLocations(map, maps, locations), [
-    locations
-  ]);
+  const handleOnGoogleApiLoaded = useCallback(
+    ({ map, maps }) => locations && addLocations(map, maps, locations),
+    [locations]
+  );
 
   return (
-    <div className="" style={{ height: '75vh' }}>
+    <div style={{ height: '75vh' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
         defaultCenter={EMOTIVE_LOCATION}
@@ -43,7 +44,12 @@ function Map({ locations }) {
       >
         {locations &&
           locations.map((location, index) => (
-            <Marker key={`key${index ** index}`} lat={location.lat} lng={location.lng} id={index} />
+            <Marker
+              key={`key${location.lat}${location.lng}`}
+              lat={location.lat}
+              lng={location.lng}
+              id={index}
+            />
           ))}
       </GoogleMapReact>
     </div>

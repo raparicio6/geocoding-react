@@ -3,6 +3,8 @@ import createSagaMiddleware from 'redux-saga';
 
 import rootSaga from '../sagas';
 
+import { reducer as geocodingReducer } from './GeocodingRedux';
+
 const store = rootReducer => {
   const sagaMiddleware = createSagaMiddleware();
   const middlewares = [sagaMiddleware];
@@ -18,6 +20,10 @@ const store = rootReducer => {
 };
 
 export default () => {
-  const appReducer = combineReducers({});
-  return store(appReducer);
+  const appReducer = combineReducers({
+    geocoding: geocodingReducer
+  });
+
+  const rootReducer = (state, action) => appReducer(state, action);
+  return store(rootReducer);
 };

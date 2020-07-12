@@ -1,13 +1,27 @@
 import React, { useEffect, useCallback } from 'react';
 import { t } from 'i18next';
 import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { Snackbar } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
+import GeocodingRedux from '../../../redux/GeocodingRedux';
+import { ADDRESSES_NOT_MATCHED_ERROR, ADDRESS_NOT_MATCHED_ERROR, DEFAULT_ERROR } from '../../constants';
 
 import styles from './styles.module.scss';
 
 function Addresses() {
+  const requesting = useSelector(state => state.geocoding.requesting);
+  const error = useSelector(state => state.geocoding.error);
+
+  const dispatch = useDispatch();
+  const getGeocodes = useCallback(addresses => dispatch(GeocodingRedux.getGeocodesRequest(addresses)), [
+    dispatch
+  ]);
+  const cleanError = useCallback(() => dispatch(GeocodingRedux.cleanError()), [dispatch]);
+
   const { register, handleSubmit, setValue, watch } = useForm();
   const values = watch();
   useEffect(() => {
@@ -22,7 +36,7 @@ function Addresses() {
     setValue
   ]);
 
-  const handleOnSubmit = useCallback(data => console.log(data), []);
+  const handleOnSubmit = useCallback(data => getGeocodes([data.addressOne, data.addressTwo]), [getGeocodes]);
 
   return (
     <>
@@ -41,11 +55,20 @@ function Addresses() {
         />
         <CustomButton
           disabled={!values.addressOne || !values.addressTwo}
+          loading={requesting}
           className={`m-top-5 ${styles.distanceButton}`}
-          label="See distance"
+          label={t('Addresses:distanceButton')}
           type="submit"
         />
       </form>
+      <Snackbar open={!!error} autoHideDuration={6000} onClose={cleanError} className={styles.snackbarError}>
+        <Alert variant="filled" color="error" severity="error" onClose={cleanError}>
+          {error === ADDRESSES_NOT_MATCHED_ERROR && t('Addresses:addressesNotMatchedError')}
+          {error.split(',')[0] === ADDRESS_NOT_MATCHED_ERROR &&
+            `${t('Addresses:theAddress')} ${error.split(',')[1]} ${t('Addresses:addressNotMatchedError')}`}
+          {error === DEFAULT_ERROR && t('Addresses:defaultErrorMessage')}
+        </Alert>
+      </Snackbar>
     </>
   );
 }

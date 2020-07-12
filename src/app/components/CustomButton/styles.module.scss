@@ -10,6 +10,7 @@
   font-family: Texta-Medium;
   font-size: 26px;
   font-weight: 700;
+  max-height: 55px;
   padding: 20px 16px 16px;
   transition-duration: 0.25s;
 
@@ -19,7 +20,12 @@
     cursor: not-allowed;
   }
 
-  &:not(.disabled):hover {
+  &:not([disabled]):not(.disabled):hover { // stylelint-disable-line selector-max-attribute
     transform: translateY(-4px);
   }
+}
+
+.spinner {
+  height: 30px !important; // stylelint-disable-line declaration-no-important
+  width: 30px !important; // stylelint-disable-line declaration-no-important
 }

@@ -1,10 +1,18 @@
-import { create } from 'apisauce';
+import apisauce from 'apisauce';
 
-const baseURL = process.env.REACT_APP_GEOCODING_API_BASE_URL;
+const create = (baseURL = '') => {
+  const api = apisauce.create({
+    baseURL,
+    timeout: 15000
+  });
 
-const api = create({
-  baseURL,
-  timeout: 15000
-});
+  const getGeocode = address => api.get('/geocode', {address})
 
-export default api;
+  return {
+    getGeocode
+  };
+};
+
+export default {
+  create
+};

@@ -15,6 +15,6 @@
   align-self: center;
   backdrop-filter: blur(4px);
   max-width: $container-width;
-  padding: 100px;
+  padding: 100px 100px $container-padding-bottom;
   width: 100%;
 }
