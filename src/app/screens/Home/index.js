@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { t } from 'i18next';
+import { useHistory } from 'react-router-dom';
 
-import Home from './layout';
+import CustomButton from '../../components/CustomButton';
+import { Routes } from '../../constants';
 
-function HomeContainer() {
-  return <Home />;
+function Home() {
+  const history = useHistory();
+
+  const handleAddressesOnClick = useCallback(() => history.push(Routes.ADDRESSES), [history]);
+
+  return (
+    <>
+      <h1 className="title">{t('Home:title')}</h1>
+      <div className="row space-around m-top-8">
+        <CustomButton label={t('Home:addressesButtonLabel')} onClick={handleAddressesOnClick} />
+        <CustomButton label={t('Home:locationButtonLabel')} />
+      </div>
+    </>
+  );
 }
 
-export default HomeContainer;
+export default Home;

@@ -1,0 +1,12 @@
+@import '../../../scss/colors';
+
+.input {
+  background-color: $white-lilac;
+  border-color: $catskill-white;
+  border-radius: 5px;
+  font-family: Texta-Medium !important; // stylelint-disable-line declaration-no-important
+  font-size: 20px !important; // stylelint-disable-line declaration-no-important
+  font-weight: 600 !important; // stylelint-disable-line declaration-no-important
+  padding: 10px 20px;
+  width: 100%;
+}

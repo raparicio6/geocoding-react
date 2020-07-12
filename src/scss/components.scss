@@ -1,7 +1,17 @@
+@import 'colors';
+
+.all-screen-height {
+  min-height: 100vh;
+}
+
 .full-width {
   width: 100%;
 }
 
-.all-screen-height {
-  min-height: 100vh;
+.title {
+  align-self: center;
+  color: $royal-blue;
+  font-family: Texta-Medium;
+  font-size: 50px;
+  font-weight: 700;
 }

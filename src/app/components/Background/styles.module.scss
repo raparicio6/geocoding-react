@@ -1,4 +1,5 @@
 @import '../../../scss/colors';
+@import '../../../scss/variables';
 
 .background {
   background-color: $wild-sand;
@@ -13,15 +14,7 @@
 .container {
   align-self: center;
   backdrop-filter: blur(4px);
-  max-width: 1200px;
+  max-width: $container-width;
   padding: 100px;
   width: 100%;
-}
-
-.title {
-  align-self: center;
-  color: $royal-blue;
-  font-family: Texta-Medium;
-  font-size: 60px;
-  font-weight: 700;
 }

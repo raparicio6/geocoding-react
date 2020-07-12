@@ -4,9 +4,9 @@ import { string } from 'prop-types';
 
 import styles from './styles.module.scss';
 
-function CustomButton({ label, className, type }) {
+function CustomButton({ label, className, type, ...props }) {
   return (
-    <button className={`${styles.button} ${className}`} type={type}>
+    <button className={`${styles.button} ${className}`} type={type} {...props}>
       {label}
     </button>
   );

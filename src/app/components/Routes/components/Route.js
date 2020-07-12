@@ -2,8 +2,19 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { elementType } from 'prop-types';
 
+import Background from '../../Background';
+
 function AppRoute({ component: Component, ...props }) {
-  return <Route {...props} render={routeProps => <Component {...routeProps} />} />;
+  return (
+    <Route
+      {...props}
+      render={routeProps => (
+        <Background>
+          <Component {...routeProps} />
+        </Background>
+      )}
+    />
+  );
 }
 
 AppRoute.propTypes = {

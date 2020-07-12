@@ -13,7 +13,13 @@
   padding: 20px 16px 16px;
   transition-duration: 0.25s;
 
-  &:hover {
+  &:disabled {
+    background: $concrete;
+    color: $very-light-grey;
+    cursor: not-allowed;
+  }
+
+  &:not(.disabled):hover {
     transform: translateY(-4px);
   }
 }
