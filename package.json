@@ -79,6 +79,7 @@
     "prettier-eslint": "^8.8.2",
     "prop-types": "^15.7.2",
     "react-hot-loader": "^4.12.20",
+    "redux-mock-store": "^1.5.4",
     "stylelint": "^13.2.1",
     "stylelint-config-wolox": "^1.0.5",
     "stylelint-no-indistinguishable-colors": "^1.2.1",
