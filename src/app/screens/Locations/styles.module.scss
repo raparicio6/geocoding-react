@@ -1,0 +1,32 @@
+@import '../../../scss/colors';
+
+@import '../../../scss/variables';
+
+.distance-button {
+  width: 180px;
+}
+
+.form {
+  align-self: center;
+  padding: 30px 15px 0;
+  width: 400px;
+}
+
+.lat-lng {
+  color: $purple-hearth;
+  font-family: Texta-Medium;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.snackbar-error {
+  margin-top: $container-padding-bottom * -1;
+}
+
+.subtitle {
+  align-self: center;
+  color: $purple-hearth;
+  font-family: Texta-Medium;
+  font-size: 30px;
+  text-align: center;
+}

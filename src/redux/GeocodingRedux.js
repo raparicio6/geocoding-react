@@ -9,10 +9,15 @@ const { Types, Creators } = createActions({
   getGeocodesFailure: ['error'],
 
   cleanError: [],
+  setError: ['error'],
 
   getDistanceRequest: ['locations'],
   getDistanceSuccess: ['distance'],
-  getDistanceFailure: ['error']
+  getDistanceFailure: ['error'],
+
+  getReverseGeocodesRequest: ['locations', 'history'],
+  getReverseGeocodesSuccess: ['locations'],
+  getReverseGeocodesFailure: ['error']
 });
 
 export const GeocodingTypes = Types;
@@ -75,14 +80,43 @@ const getDistanceFailure = (state, { error }) => {
   });
 };
 
+const setError = (state, { error }) => state.merge({ error });
+
+const getReverseGeocodesRequest = state =>
+  state.merge({
+    requesting: true,
+    error: ''
+  });
+
+const getReverseGeocodesSuccess = (state, { locations }) => {
+  LocalStorageService.setLocations(locations);
+
+  return state.merge({
+    requesting: false,
+    error: '',
+    locations
+  });
+};
+
+const getReverseGeocodesFailure = (state, { error }) =>
+  state.merge({
+    requesting: false,
+    error
+  });
+
 export const reducer = createReducer(INITIAL_STATE, {
   [Types.GET_GEOCODES_REQUEST]: getGeocodesRequest,
   [Types.GET_GEOCODES_SUCCESS]: getGeocodesSuccess,
   [Types.GET_GEOCODES_FAILURE]: getGeocodesFailure,
 
   [Types.CLEAN_ERROR]: cleanError,
+  [Types.SET_ERROR]: setError,
 
   [Types.GET_DISTANCE_REQUEST]: getDistanceRequest,
   [Types.GET_DISTANCE_SUCCESS]: getDistanceSuccess,
-  [Types.GET_DISTANCE_FAILURE]: getDistanceFailure
+  [Types.GET_DISTANCE_FAILURE]: getDistanceFailure,
+
+  [Types.GET_REVERSE_GEOCODES_REQUEST]: getReverseGeocodesRequest,
+  [Types.GET_REVERSE_GEOCODES_SUCCESS]: getReverseGeocodesSuccess,
+  [Types.GET_REVERSE_GEOCODES_FAILURE]: getReverseGeocodesFailure
 });

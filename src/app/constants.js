@@ -1,7 +1,8 @@
 export const Routes = {
   HOME: '/',
   ADDRESSES: '/addresses',
-  MAP: '/map'
+  MAP: '/map',
+  LOCATIONS: '/locations'
 };
 
 export const LANGUAGES = {
@@ -13,5 +14,10 @@ export const DEFAULT_ERROR_MESSAGE = {
 };
 
 export const DEFAULT_ERROR = 'DEFAULT_ERROR';
+
 export const ADDRESSES_NOT_MATCHED_ERROR = 'ADDRESSES_NOT_MATCHED_ERROR';
 export const ADDRESS_NOT_MATCHED_ERROR = 'ADDRESS_NOT_MATCHED_ERROR';
+
+export const INVALID_LOCATIONS_ERROR = 'INVALID_LOCATIONS_ERROR';
+export const LOCATIONS_NOT_MATCHED_ERROR = 'LOCATIONS_NOT_MATCHED_ERROR';
+export const LOCATION_NOT_MATCHED_ERROR = 'LOCATION_NOT_MATCHED_ERROR';

@@ -34,6 +34,7 @@ module.exports = {
     'no-nested-ternary': 'off',
     'id-length': ['error', { max: 35 , min: 1 }],
     'generator-star-spacing': 'off',
-    'react/forbid-dom-props': 'off'
+    'react/forbid-dom-props': 'off',
+    'complexity': ['error', 12]
   }
 };

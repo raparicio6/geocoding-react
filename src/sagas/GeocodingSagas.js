@@ -5,7 +5,9 @@ import {
   ADDRESSES_NOT_MATCHED_ERROR,
   ADDRESS_NOT_MATCHED_ERROR,
   DEFAULT_ERROR,
-  Routes
+  Routes,
+  LOCATIONS_NOT_MATCHED_ERROR,
+  LOCATION_NOT_MATCHED_ERROR
 } from '../app/constants';
 
 export function* getGeocodes(api, action) {
@@ -51,5 +53,54 @@ export function* getDistance(api, action) {
     yield put(GeocodingRedux.getDistanceSuccess(response.data.distance));
   } else {
     yield put(GeocodingRedux.getDistanceFailure(DEFAULT_ERROR));
+  }
+}
+
+export function* getReverseGeocodes(api, action) {
+  const { locations, history } = action;
+  const startingLocationOne = locations[0];
+  const startingLocationTwo = locations[1];
+  const [responseOne, responseTwo] = yield all([
+    yield call(api.getReverseGeocode, startingLocationOne),
+    yield call(api.getReverseGeocode, startingLocationTwo)
+  ]);
+
+  const isResponseOneOk = responseOne.ok;
+  const isResponseTwoOk = responseTwo.ok;
+  if (isResponseOneOk && isResponseTwoOk) {
+    const locationOneExists = responseOne.data.results.length;
+    const locationTwoExists = responseTwo.data.results.length;
+    if (locationOneExists && locationTwoExists) {
+      const locationOne = responseOne.data.results[0].geometry.location;
+      const locationTwo = responseTwo.data.results[0].geometry.location;
+      yield put(GeocodingRedux.getReverseGeocodesSuccess([locationOne, locationTwo]));
+      yield put(
+        GeocodingRedux.getDistanceRequest([
+          `${locationOne.lat},${locationOne.lng}`,
+          `${locationTwo.lat},${locationTwo.lng}`
+        ])
+      );
+      history.push(Routes.MAP);
+    } else if (!locationOneExists && !locationTwoExists) {
+      yield put(GeocodingRedux.getReverseGeocodesFailure(LOCATIONS_NOT_MATCHED_ERROR));
+    } else if (locationOneExists) {
+      yield put(
+        GeocodingRedux.getReverseGeocodesFailure(`${LOCATION_NOT_MATCHED_ERROR},${startingLocationTwo}`)
+      );
+    } else {
+      yield put(
+        GeocodingRedux.getReverseGeocodesFailure(`${LOCATION_NOT_MATCHED_ERROR},${startingLocationOne}`)
+      );
+    }
+  } else if (!isResponseOneOk && !isResponseTwoOk) {
+    yield put(GeocodingRedux.getReverseGeocodesFailure(LOCATIONS_NOT_MATCHED_ERROR));
+  } else if (isResponseOneOk) {
+    yield put(
+      GeocodingRedux.getReverseGeocodesFailure(`${LOCATION_NOT_MATCHED_ERROR},${startingLocationTwo}`)
+    );
+  } else {
+    yield put(
+      GeocodingRedux.getReverseGeocodesFailure(`${LOCATION_NOT_MATCHED_ERROR},${startingLocationOne}`)
+    );
   }
 }

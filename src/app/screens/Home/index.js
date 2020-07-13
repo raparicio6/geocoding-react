@@ -9,13 +9,14 @@ function Home() {
   const history = useHistory();
 
   const handleAddressesOnClick = useCallback(() => history.push(Routes.ADDRESSES), [history]);
+  const handleLocationsOnClick = useCallback(() => history.push(Routes.LOCATIONS), [history]);
 
   return (
     <>
       <h1 className="title">{t('Home:title')}</h1>
       <div className="row space-around m-top-8">
         <CustomButton label={t('Home:addressesButtonLabel')} onClick={handleAddressesOnClick} />
-        <CustomButton label={t('Home:locationButtonLabel')} />
+        <CustomButton label={t('Home:locationButtonLabel')} onClick={handleLocationsOnClick} />
       </div>
     </>
   );
