@@ -4,6 +4,28 @@
 
 <img alt="App" src="./app-image.png">
 
+- This application consists of an interactive Google Map with a distance calculator between two addresses or two coordinates. The addresses can be either street addresses or building names. 
+- The backend interacts with [Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/intro). This API is awesome! 
+- To calculate distances, the [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) is used.
+- Some React cool trending libraries were used to develop the app, such as [React Hook Form](https://react-hook-form.com/) and [Material UI](https://material-ui.com/). Also a special mention to [Google Map React](https://github.com/google-map-react/google-map-react), it is such a powerful tool. I had never integrated React with Google Maps JavaScript API before and this library was very helpful, it worked really well for me.  
+**Explore the whole world!**
+
+## Interesting topics
+- I think that user experience becomes enhanced by adding an interactive Google Map. It adds value and differentiates this app from others with similar characteristics.
+- In order to improve robustness to exceptions, buttons are disabled until fields are filled. Some CSS properties were used to make this experience suitable for the user. 
+- Backend endpoints have a strict schema validation on their inputs too.
+- There are some important details which make the application more user-friendly, such as loaders, nice error messages, animations. I used some styles and colors I found in Emotive in order to match the app with their design, which I think are great.
+- Local storage is used in order to persist the locations and the distance. This allows the user to see the information even after refreshing the page or after closing it and returning back.
+- The app is responsive.
+- I added some awesome markers for the map which I found on this [article](https://levelup.gitconnected.com/reactjs-google-maps-with-custom-marker-ece0c7d184c4).
+
+## Technical challenges
+Some issues I had to deal with are the following:
+- Blurring part of the background image.
+I thought of a world map background image for the design of the app. In order to properly achieve that, I needed to blur part of the image so that the screen data can be shown. Since I had never done that, I googled about it and examined many options which suggested using a lot of different HTML divs and CSS properties. None of these alternatives helped me, until I ran into an awesome stack overflow answer on page 2 of Google which suggested using backdrop-filter: blur(npx), a CSS magic property! This was definitely what I was looking for.
+- The interaction with Google Maps Geocoding API was very intuitive. But I can mention that I had to closely look into all the possible parameters the API can receive (and their format) and also the ones the API responds with. Regarding the latter, in the backend service that interacts with Google API I needed to make a custom validation in the satisfactory response (status 20x) because it may still have had an error. Google API may send the response with status 20x but with an error status field (e.g INVALID_REQUEST, REQUEST_DENIED).
+- I wanted to document the backend API but I ran out of time. I always use OpenAPI (A.K.A Swagger) to document APIs, I find it an amazing tool. You can check this [article](https://medium.com/wolox/documenting-a-nodejs-rest-api-with-openapi-3-swagger-5deee9f50420) I wrote last year for more details on how to use it.
+
 ## Getting Started
 
 ### Installing
