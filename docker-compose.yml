@@ -1,0 +1,24 @@
+version: "2"
+services:
+  node:
+    container_name: node
+    build:
+      context: ./geocoding-node
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      GOOGLE_GEOCODING_API_KEY: <your google API key>
+  react:
+    container_name: react
+    build:
+      context: ./geocoding-react
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_GOOGLE_MAPS_API_KEY: <your google API key>
+      REACT_APP_GEOCODING_API_BASE_URL: "http://localhost:8080"
+    stdin_open: true
+    depends_on:
+      - node
