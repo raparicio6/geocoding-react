@@ -23,7 +23,7 @@ function MapScreen() {
   return (
     <>
       <Map locations={locations.length ? locations : LocalStorageService.getLocations()} />
-      <div className="row middle center m-top-9">
+      <div className={`row middle center ${styles.distanceContainer}`}>
         {!requesting && (
           <span className={styles.distanceText}>
             {error ? (

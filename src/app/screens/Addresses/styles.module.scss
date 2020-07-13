@@ -13,3 +13,24 @@
 .snackbar-error {
   margin-top: $container-padding-bottom * -1;
 }
+
+@media (max-width: $breakpoint-tablet) {
+  .form {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .error-message {
+    font-size: 12px !important; // stylelint-disable-line declaration-no-important
+  }
+
+  .form {
+    margin-bottom: 70px;
+  }
+
+  .snackbar-error {
+    margin: auto;
+    max-width: 300px;
+  }
+}

@@ -1,5 +1,12 @@
 @import '../../../scss/colors';
 
+@import '../../../scss/variables';
+
+.distance-container {
+  margin-top: 45px;
+  padding-right: 20px;
+}
+
 .distance-number {
   font-family: Texta-Medium;
   font-weight: 700;
@@ -9,6 +16,8 @@
   color: $black;
   font-family: Texta-Medium;
   font-size: 30px;
+  line-height: 25px;
+  padding-left: 15px;
   padding-top: 10px;
 }
 
@@ -24,4 +33,39 @@
 
 .tooltip {
   margin-left: 50px !important; // stylelint-disable-line declaration-no-important
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .distance-text {
+    font-size: 22px;
+    padding-left: 15px;
+  }
+
+  .tooltip {
+    margin-left: 30px !important; // stylelint-disable-line declaration-no-important
+    min-height: 35px !important; // stylelint-disable-line declaration-no-important
+    min-width: 35px !important; // stylelint-disable-line declaration-no-important
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .distance-container {
+    margin-top: 30px;
+  }
+
+  .distance-text {
+    font-size: 14px;
+    line-height: 15px;
+    max-width: 300px;
+  }
+
+  .replay-icon {
+    font-size: 20px !important; // stylelint-disable-line declaration-no-important
+  }
+
+  .tooltip {
+    height: 30px !important; // stylelint-disable-line declaration-no-important
+    margin-left: 10px !important; // stylelint-disable-line declaration-no-important
+    width: 30px !important; // stylelint-disable-line declaration-no-important
+  }
 }

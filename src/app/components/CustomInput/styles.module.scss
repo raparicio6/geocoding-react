@@ -1,4 +1,5 @@
 @import '../../../scss/colors';
+@import '../../../scss/variables';
 
 .input {
   background-color: $white-lilac;
@@ -9,4 +10,11 @@
   font-weight: 600 !important; // stylelint-disable-line declaration-no-important
   padding: 10px 20px;
   width: 100%;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .input {
+    font-size: 14px !important; // stylelint-disable-line declaration-no-important
+    max-width: 200px;
+  }
 }

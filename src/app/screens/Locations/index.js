@@ -63,40 +63,40 @@ function Locations() {
       <h1 className="title">{t('Locations:title')}</h1>
       <h2 className={`${styles.subtitle} m-top-7`}>{t('Locations:subtitle')}</h2>
       <form className={`column center ${styles.form}`} onSubmit={handleSubmit(handleOnSubmit)}>
-        <div className="row m-top-5">
+        <div className={`row ${styles.locationOne}`}>
           <div className="column center m-right-2">
-            <span className={styles.latLng}>Lat</span>
+            <span className={styles.latLng}>{t('Locations:lat')}</span>
             <CustomInput
-              className="m-top-2"
+              className={`m-top-2 ${styles.input}`}
               name="latOne"
               onChange={handleLatOneOnChange}
               placeholder="34.03695"
             />
           </div>
           <div className="column center m-left-2">
-            <span className={styles.latLng}>Long</span>
+            <span className={styles.latLng}>{t('Locations:long')}</span>
             <CustomInput
-              className="m-top-2"
+              className={`m-top-2 ${styles.input}`}
               name="lngOne"
               onChange={handleLngOneOnChange}
               placeholder="-118.44266"
             />
           </div>
         </div>
-        <div className="row m-top-10">
+        <div className={`row ${styles.locationTwo}`}>
           <div className="column center m-right-2">
-            <span className={styles.latLng}>Lat</span>
+            <span className={styles.latLng}>{t('Locations:lat')}</span>
             <CustomInput
-              className="m-top-2"
+              className={`m-top-2 ${styles.input}`}
               name="latTwo"
               onChange={handleLatTwoOnChange}
               placeholder="51.53354"
             />
           </div>
           <div className="column center m-left-2">
-            <span className={styles.latLng}>Long</span>
+            <span className={styles.latLng}>{t('Locations:long')}</span>
             <CustomInput
-              className="m-top-2"
+              className={`m-top-2 ${styles.input}`}
               name="lngTwo"
               onChange={handleLngTwoOnChange}
               placeholder="-0.17932"

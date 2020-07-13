@@ -1,4 +1,5 @@
 @import '../../../scss/colors';
+@import '../../../scss/variables';
 
 .button {
   background-color: $royal-blue;
@@ -28,4 +29,30 @@
 .spinner {
   height: 30px !important; // stylelint-disable-line declaration-no-important
   width: 30px !important; // stylelint-disable-line declaration-no-important
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .button {
+    font-size: 22px;
+    padding-top: 14px;
+    padding-bottom: 10px;
+  }
+
+  .spinner {
+    height: 20px !important; // stylelint-disable-line declaration-no-important
+    width: 20px !important; // stylelint-disable-line declaration-no-important
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .button {
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+  }
+
+  .spinner {
+    height: 20px !important; // stylelint-disable-line declaration-no-important
+    width: 20px !important; // stylelint-disable-line declaration-no-important
+  }
 }

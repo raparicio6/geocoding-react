@@ -64,7 +64,13 @@ function Addresses() {
         />
       </form>
       <Snackbar open={!!error} autoHideDuration={6000} onClose={cleanError} className={styles.snackbarError}>
-        <Alert variant="filled" color="error" severity="error" onClose={cleanError}>
+        <Alert
+          variant="filled"
+          color="error"
+          severity="error"
+          onClose={cleanError}
+          className={styles.errorMessage}
+        >
           {error === ADDRESSES_NOT_MATCHED_ERROR && t('Addresses:addressesNotMatchedError')}
           {error.split(',')[0] === ADDRESS_NOT_MATCHED_ERROR &&
             `${t('Addresses:theAddress')} ${error.split(',')[1]} ${t('Addresses:addressNotMatchedError')}`}

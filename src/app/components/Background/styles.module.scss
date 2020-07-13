@@ -18,3 +18,20 @@
   padding: 100px 100px $container-padding-bottom;
   width: 100%;
 }
+
+@media (max-width: $breakpoint-tablet) {
+  .background {
+    background-size: cover;
+    padding-top: 200px;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .background {
+    padding-top: 150px;
+  }
+
+  .container {
+    padding: 30px;
+  }
+}
