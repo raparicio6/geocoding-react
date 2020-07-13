@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { Snackbar } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
+import { useHistory } from 'react-router-dom';
 
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
@@ -13,13 +14,14 @@ import { ADDRESSES_NOT_MATCHED_ERROR, ADDRESS_NOT_MATCHED_ERROR, DEFAULT_ERROR }
 import styles from './styles.module.scss';
 
 function Addresses() {
+  const history = useHistory();
   const requesting = useSelector(state => state.geocoding.requesting);
   const error = useSelector(state => state.geocoding.error);
-
   const dispatch = useDispatch();
-  const getGeocodes = useCallback(addresses => dispatch(GeocodingRedux.getGeocodesRequest(addresses)), [
-    dispatch
-  ]);
+  const getGeocodes = useCallback(
+    addresses => dispatch(GeocodingRedux.getGeocodesRequest(addresses, history)),
+    [dispatch, history]
+  );
   const cleanError = useCallback(() => dispatch(GeocodingRedux.cleanError()), [dispatch]);
 
   const { register, handleSubmit, setValue, watch } = useForm();

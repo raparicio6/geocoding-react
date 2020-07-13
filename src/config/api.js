@@ -6,10 +6,13 @@ const create = (baseURL = '') => {
     timeout: 15000
   });
 
-  const getGeocode = address => api.get('/geocode', {address})
+  const getGeocode = address => api.get('/geocode', { address });
+  const getDistance = (locationOne, locationTwo) =>
+    api.get('/geometric_distance', { locationOne, locationTwo });
 
   return {
-    getGeocode
+    getGeocode,
+    getDistance
   };
 };
 

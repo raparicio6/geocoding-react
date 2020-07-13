@@ -44,7 +44,11 @@ const defineProperty = (prop, defaultKey = '', tag = '') => {
     setValue(`@@${projectName}:${prop}${tag}${key}`, val);
   module.exports[`get${capitalizedKey}`] = (key = defaultKey) =>
     getValue(`@@${projectName}:${prop}${tag}${key}`);
+  module.exports[`remove${capitalizedKey}`] = (key = defaultKey) =>
+    removeValue(`@@${projectName}:${prop}${tag}${key}`);
 };
 
 // ------------------------------ LOCAL STORAGE PROPERTIES ------------------------------
 defineProperty('language');
+defineProperty('locations');
+defineProperty('distance');

@@ -1,0 +1,27 @@
+@import '../../../scss/colors';
+
+.distance-number {
+  font-family: Texta-Medium;
+  font-weight: 700;
+}
+
+.distance-text {
+  color: $black;
+  font-family: Texta-Medium;
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+.error-message {
+  color: $valencia;
+  font-family: Texta-Medium;
+  font-size: 30px;
+}
+
+.replay-icon {
+  color: $white;
+}
+
+.tooltip {
+  margin-left: 50px !important; // stylelint-disable-line declaration-no-important
+}
