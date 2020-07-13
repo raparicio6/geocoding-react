@@ -17,6 +17,7 @@
 - There are some important details which make the application more user-friendly, such as loaders, nice error messages, animations. I used some styles and colors I found in Emotive in order to match the app with their design, which I think are great.
 - Local storage is used in order to persist the locations and the distance. This allows the user to see the information even after refreshing the page or after closing it and returning back.
 - The app is responsive.
+- Backend has 100% of code coverage.
 - I added some awesome markers for the map which I found on this [article](https://levelup.gitconnected.com/reactjs-google-maps-with-custom-marker-ece0c7d184c4).
 
 ## Technical challenges
