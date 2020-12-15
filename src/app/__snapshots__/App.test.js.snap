@@ -1,0 +1,294 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App matches the snapshot 1`] = `
+<App>
+  <Provider
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  >
+    <AppRoutes>
+      <BrowserRouter>
+        <Router
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "createHref": [Function],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+        >
+          <Header>
+            <WithStyles(ForwardRef(AppBar))
+              className="row center appbar"
+              position="static"
+            >
+              <ForwardRef(AppBar)
+                className="row center appbar"
+                classes={
+                  Object {
+                    "colorDefault": "MuiAppBar-colorDefault",
+                    "colorInherit": "MuiAppBar-colorInherit",
+                    "colorPrimary": "MuiAppBar-colorPrimary",
+                    "colorSecondary": "MuiAppBar-colorSecondary",
+                    "colorTransparent": "MuiAppBar-colorTransparent",
+                    "positionAbsolute": "MuiAppBar-positionAbsolute",
+                    "positionFixed": "MuiAppBar-positionFixed",
+                    "positionRelative": "MuiAppBar-positionRelative",
+                    "positionStatic": "MuiAppBar-positionStatic",
+                    "positionSticky": "MuiAppBar-positionSticky",
+                    "root": "MuiAppBar-root",
+                  }
+                }
+                position="static"
+              >
+                <WithStyles(ForwardRef(Paper))
+                  className="MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary row center appbar"
+                  component="header"
+                  elevation={4}
+                  square={true}
+                >
+                  <ForwardRef(Paper)
+                    className="MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary row center appbar"
+                    classes={
+                      Object {
+                        "elevation0": "MuiPaper-elevation0",
+                        "elevation1": "MuiPaper-elevation1",
+                        "elevation10": "MuiPaper-elevation10",
+                        "elevation11": "MuiPaper-elevation11",
+                        "elevation12": "MuiPaper-elevation12",
+                        "elevation13": "MuiPaper-elevation13",
+                        "elevation14": "MuiPaper-elevation14",
+                        "elevation15": "MuiPaper-elevation15",
+                        "elevation16": "MuiPaper-elevation16",
+                        "elevation17": "MuiPaper-elevation17",
+                        "elevation18": "MuiPaper-elevation18",
+                        "elevation19": "MuiPaper-elevation19",
+                        "elevation2": "MuiPaper-elevation2",
+                        "elevation20": "MuiPaper-elevation20",
+                        "elevation21": "MuiPaper-elevation21",
+                        "elevation22": "MuiPaper-elevation22",
+                        "elevation23": "MuiPaper-elevation23",
+                        "elevation24": "MuiPaper-elevation24",
+                        "elevation3": "MuiPaper-elevation3",
+                        "elevation4": "MuiPaper-elevation4",
+                        "elevation5": "MuiPaper-elevation5",
+                        "elevation6": "MuiPaper-elevation6",
+                        "elevation7": "MuiPaper-elevation7",
+                        "elevation8": "MuiPaper-elevation8",
+                        "elevation9": "MuiPaper-elevation9",
+                        "outlined": "MuiPaper-outlined",
+                        "root": "MuiPaper-root",
+                        "rounded": "MuiPaper-rounded",
+                      }
+                    }
+                    component="header"
+                    elevation={4}
+                    square={true}
+                  >
+                    <header
+                      className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary row center appbar MuiPaper-elevation4"
+                    >
+                      <WithStyles(ForwardRef(Toolbar))
+                        className="toolbar"
+                      >
+                        <ForwardRef(Toolbar)
+                          className="toolbar"
+                          classes={
+                            Object {
+                              "dense": "MuiToolbar-dense",
+                              "gutters": "MuiToolbar-gutters",
+                              "regular": "MuiToolbar-regular",
+                              "root": "MuiToolbar-root",
+                            }
+                          }
+                        >
+                          <div
+                            className="MuiToolbar-root MuiToolbar-regular toolbar MuiToolbar-gutters"
+                          >
+                            <Link
+                              to="/"
+                            >
+                              <LinkAnchor
+                                href="/"
+                                navigate={[Function]}
+                              >
+                                <a
+                                  href="/"
+                                  onClick={[Function]}
+                                >
+                                  <img
+                                    alt="Logo"
+                                    className="logo"
+                                    src="logo.svg"
+                                  />
+                                </a>
+                              </LinkAnchor>
+                            </Link>
+                          </div>
+                        </ForwardRef(Toolbar)>
+                      </WithStyles(ForwardRef(Toolbar))>
+                    </header>
+                  </ForwardRef(Paper)>
+                </WithStyles(ForwardRef(Paper))>
+              </ForwardRef(AppBar)>
+            </WithStyles(ForwardRef(AppBar))>
+          </Header>
+          <Switch>
+            <AppRoute
+              component={[Function]}
+              computedMatch={
+                Object {
+                  "isExact": true,
+                  "params": Object {},
+                  "path": "/",
+                  "url": "/",
+                }
+              }
+              exact={true}
+              location={
+                Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                }
+              }
+              path="/"
+              withBackground={true}
+            >
+              <Route
+                computedMatch={
+                  Object {
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "/",
+                    "url": "/",
+                  }
+                }
+                exact={true}
+                location={
+                  Object {
+                    "hash": "",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  }
+                }
+                path="/"
+                render={[Function]}
+              >
+                <Background>
+                  <div
+                    className="column background"
+                  >
+                    <div
+                      className="column container"
+                    >
+                      <Home
+                        history={
+                          Object {
+                            "action": "POP",
+                            "block": [Function],
+                            "createHref": [Function],
+                            "go": [Function],
+                            "goBack": [Function],
+                            "goForward": [Function],
+                            "length": 1,
+                            "listen": [Function],
+                            "location": Object {
+                              "hash": "",
+                              "pathname": "/",
+                              "search": "",
+                              "state": undefined,
+                            },
+                            "push": [Function],
+                            "replace": [Function],
+                          }
+                        }
+                        location={
+                          Object {
+                            "hash": "",
+                            "pathname": "/",
+                            "search": "",
+                            "state": undefined,
+                          }
+                        }
+                        match={
+                          Object {
+                            "isExact": true,
+                            "params": Object {},
+                            "path": "/",
+                            "url": "/",
+                          }
+                        }
+                      >
+                        <h1
+                          className="title"
+                        />
+                        <div
+                          className="row space-around m-top-8"
+                        >
+                          <CustomButton
+                            className=""
+                            disabled={false}
+                            label=""
+                            loading={false}
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <button
+                              className="button "
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            />
+                          </CustomButton>
+                          <CustomButton
+                            className=""
+                            disabled={false}
+                            label=""
+                            loading={false}
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <button
+                              className="button "
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            />
+                          </CustomButton>
+                        </div>
+                      </Home>
+                    </div>
+                  </div>
+                </Background>
+              </Route>
+            </AppRoute>
+          </Switch>
+        </Router>
+      </BrowserRouter>
+    </AppRoutes>
+  </Provider>
+</App>
+`;
