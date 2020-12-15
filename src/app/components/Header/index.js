@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { Routes } from '../../constants';
 
-import emotiveLogo from './emotive-logo.svg';
+import logo from './logo.svg';
 import styles from './styles.module.scss';
 
 function Header() {
@@ -12,7 +12,7 @@ function Header() {
     <AppBar className={`row center ${styles.appbar}`} position="static">
       <Toolbar className={styles.toolbar}>
         <Link to={Routes.HOME}>
-          <img src={emotiveLogo} alt="Emotive logo" className={styles.logo} />
+          <img src={logo} alt="Logo" className={styles.logo} />
         </Link>
       </Toolbar>
     </AppBar>

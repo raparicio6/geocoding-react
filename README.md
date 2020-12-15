@@ -14,7 +14,7 @@
 - I think that user experience becomes enhanced by adding an interactive Google Map. It adds value and differentiates this app from others with similar characteristics.
 - In order to improve robustness to exceptions, buttons are disabled until fields are filled. Some CSS properties were used to make this experience suitable for the user. 
 - Backend endpoints have a strict schema validation on their inputs too.
-- There are some important details which make the application more user-friendly, such as loaders, nice error messages, animations. I used some styles and colors I found in Emotive in order to match the app with their design, which I think are great.
+- There are some important details which make the application more user-friendly, such as loaders, nice error messages, animations.
 - Local storage is used in order to persist the locations and the distance. This allows the user to see the information even after refreshing the page or after closing it and returning back.
 - The app is responsive.
 - Backend has 100% of code coverage.

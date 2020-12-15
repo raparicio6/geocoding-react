@@ -4,7 +4,7 @@ import { arrayOf, shape, number } from 'prop-types';
 
 import Marker from './Marker';
 
-const EMOTIVE_LOCATION = {
+const EXAMPLE_LOCATION = {
   lat: 34.03695,
   lng: -118.44266
 };
@@ -36,7 +36,7 @@ function Map({ locations }) {
     <div style={{ height: '75vh' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
-        defaultCenter={EMOTIVE_LOCATION}
+        defaultCenter={EXAMPLE_LOCATION}
         defaultZoom={1}
         yesIWantToUseGoogleMapApiInternals
         onGoogleApiLoaded={handleOnGoogleApiLoaded}
