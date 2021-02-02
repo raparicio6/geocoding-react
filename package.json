@@ -90,10 +90,6 @@
     "type": "git",
     "url": "git@github.com:raparicio6/geocoding-react.git"
   },
-  "engines": {
-    "node": "12.18.2",
-    "npm": "6.14.6"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint-diff && npm run lint-scss"
