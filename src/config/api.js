@@ -11,10 +11,13 @@ const create = (baseURL = '') => {
     api.get('/geometric_distance', { locationOne, locationTwo });
   const getReverseGeocode = latlng => api.get('/reverse_geocode', { latlng });
 
+  const addClick = url => api.put('/add_clicks', { clicks: { [url]: 1 } });
+
   return {
     getGeocode,
     getDistance,
-    getReverseGeocode
+    getReverseGeocode,
+    addClick
   };
 };
 

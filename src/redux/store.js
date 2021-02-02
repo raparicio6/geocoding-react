@@ -4,6 +4,7 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from '../sagas';
 
 import { reducer as geocodingReducer } from './GeocodingRedux';
+import { reducer as trackingReducer } from './TrackingRedux';
 
 const store = rootReducer => {
   const sagaMiddleware = createSagaMiddleware();
@@ -21,7 +22,8 @@ const store = rootReducer => {
 
 export default () => {
   const appReducer = combineReducers({
-    geocoding: geocodingReducer
+    geocoding: geocodingReducer,
+    tracking: trackingReducer
   });
 
   const rootReducer = (state, action) => appReducer(state, action);
