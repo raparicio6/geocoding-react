@@ -242,42 +242,46 @@ exports[`App matches the snapshot 1`] = `
                           }
                         }
                       >
-                        <h1
-                          className="title"
-                        />
                         <div
-                          className="row space-around m-top-8"
+                          onClick={[Function]}
                         >
-                          <CustomButton
-                            className=""
-                            disabled={false}
-                            label=""
-                            loading={false}
-                            onClick={[Function]}
-                            type="button"
+                          <h1
+                            className="title"
+                          />
+                          <div
+                            className="row space-around m-top-8"
                           >
-                            <button
-                              className="button "
+                            <CustomButton
+                              className=""
                               disabled={false}
+                              label=""
+                              loading={false}
                               onClick={[Function]}
                               type="button"
-                            />
-                          </CustomButton>
-                          <CustomButton
-                            className=""
-                            disabled={false}
-                            label=""
-                            loading={false}
-                            onClick={[Function]}
-                            type="button"
-                          >
-                            <button
-                              className="button "
+                            >
+                              <button
+                                className="button "
+                                disabled={false}
+                                onClick={[Function]}
+                                type="button"
+                              />
+                            </CustomButton>
+                            <CustomButton
+                              className=""
                               disabled={false}
+                              label=""
+                              loading={false}
                               onClick={[Function]}
                               type="button"
-                            />
-                          </CustomButton>
+                            >
+                              <button
+                                className="button "
+                                disabled={false}
+                                onClick={[Function]}
+                                type="button"
+                              />
+                            </CustomButton>
+                          </div>
                         </div>
                       </Home>
                     </div>
